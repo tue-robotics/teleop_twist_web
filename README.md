@@ -1,17 +1,13 @@
 # TU/e Mobile UI
 
-### A collection of web applications to control robots from the TU/e
+### A generic web-based teleop for twist robots based on the amigo_mobile_ui package
 
-## [Amigo Mobile UI](amigo_mobile_ui)
-With this app you can easily teleoperate the robot. It offers touch-based driving, various poses and various interfaces that are needed for robotcup.
-
-## [ED](ed)
-This contains the GUI for the world model (ED). It can be used to edit entities in the word model of give high level tasks to the robot.
+With this app you can easily teleoperate the robot. It offers touch-based driving.
 
 ### Use
-To launch the webserver, run one of the robot specific launch files in the [launch](launch) folder. This will launch all the nesecary nodes.
+To launch the webserver, run the teleop launch file in the [launch](launch) folder. This will launch all the necessary nodes.
 ```
-$ roslaunch tue_mobile_ui amigo.launch
+$ roslaunch teleop_twist_web teleop.launch
 ```
 
 Pre-built files can be found in each `dist` folder and the source files can be found in the `app` folder.

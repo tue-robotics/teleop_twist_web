@@ -15,7 +15,7 @@ Build Setup
  3. Install other dependencies
    * `sudo apt-get install libgif-dev`
  4. For each gui, install their dependencies
-   * `roscd tue_mobile_ui/(FOLDER)`
+   * `roscd teleop_twist_web/(FOLDER)`
    * `npm install`
    * `bower install`
 
@@ -25,7 +25,7 @@ Before proceeding, please confirm you have installed the dependencies above.
 
 To run the build tasks:
 
- 1. `roscd tue_mobile_ui/(FOLDER)/`
+ 1. `roscd teleop_twist_web/(FOLDER)/`
  2. `grunt build`
 
 `grunt build` will build the app in the build directory. It will also run the linter and test cases.

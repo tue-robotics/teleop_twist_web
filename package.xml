@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <package>
-  <name>tue_mobile_ui</name>
+  <name>teleop_twist_web</name>
   <version>0.0.0</version>
-  <description>The tue_mobile_ui package</description>
+  <description>Generic web-based teleop for twist robots.</description>
 
-  <maintainer email="rayman747@hotmail.com">Ramon Wijnands</maintainer>
+  <maintainer email="tim.clephas@nobleo.nl">Tim Clephas</maintainer>
 
+  <author email="tim.clephas@nobleo.nl">Tim Clephas</author>
   <author email="rayman747@hotmail.com">Ramon Wijnands</author>
   <author email="reinzor@gmail.com">Rein Appeldoorn</author>
 
