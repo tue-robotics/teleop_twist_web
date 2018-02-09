@@ -25,22 +25,6 @@
     </head>
     <body>
         <!-- lost connection modal -->
-        <div class="modal fade" id="modalConnectionLost" tabindex="-1" role="dialog" aria-labelledby="modalConnectionLostLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h4 class="modal-title" id="modalConnectionLostLabel">ROS connection lost!</h4>
-              </div>
-              <div class="modal-body">
-                Please turn on the ros backend and ensure a proper connection.
-              </div>
-              <div class="modal-footer">
-                <button id="dismiss" type="button" class="btn" data-dismiss="modal">Dismiss</button>
-                <button id="reconnect" type="button" class="btn btn-primary" data-loading-text="Connecting...">Connect</button>
-              </div>
-            </div><!-- /.modal-content -->
-          </div><!-- /.modal-dialog -->
-        </div><!-- /.modal -->
 
         <div class="snap-drawers">
             <div class="snap-drawer snap-drawer-right" id="toggles">
@@ -59,16 +43,16 @@
                     </li>
                 </ul>
             </div>
-        </div>
+        </div> 
 
         <div id="content" class="snap-content">
 
             <div id="toolbar">
-
                 <h1>ROS web teleop &nbsp; <small> Battery Value: </small> <script src="scripts/battery-voltage.js"></script> 
                     <small id="batteryValue"> Unknown</small>  </h1>
-            <span id="toggle-options" class="glyphicon glyphicon-th"></span>
+                <span id="toggle-options" class="glyphicon glyphicon-th"></span>
             </div>
+
 
             <div id="main">
 
@@ -108,8 +92,7 @@
         <script src="scripts/pinghistory.js"></script>
         <script src="scripts/teleop.js"></script>
         <script src="scripts/canvas-teleop.js"></script>
-
-        <script src="scripts/button-handler.js"></script>
+        <!--<script src="scripts/button-handler.js"></script> -->
         <script src="scripts/battery-manager.js"></script>
         <script src="scripts/battery-voltage.js"></script>
         <!-- endbuild -->
@@ -135,6 +118,41 @@
                 var val = this.innerHTML;
                 ga('send', 'event', 'button', 'click', val);
             });
+              // Initialize snapper
+            var snapper = new Snap({
+            element: document.getElementById('content'),
+            });
+
+            $(window).on('hashchange', function() {
+            var hash = window.location.hash;
+            if (!hash) {
+            return;
+            }
+
+            // remove all active classes in #main
+            $('#main > .active').removeClass('active');
+
+            // create active page
+            var page = $(hash);
+            page.addClass('active');
+
+            // slide back
+            snapper.close();
+
+            // set title
+            $('#toolbar h1').html(page.data('title'));
+            })
+            $(window).trigger('hashchange');
+
+
+            $('#toggle-options').click(function() {
+                if (snapper.state().state === 'right' ){
+                    snapper.close();
+                } else {
+                    snapper.open('right');
+                }
+            });
+
         </script>
     </body>
 </html>

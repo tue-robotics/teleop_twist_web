@@ -23,13 +23,13 @@ var ros;
 
 var listenering = new ROSLIB.Topic({
    ros          : ros,
-   name         : '/battery_voltage',
+   name         : 'battery_percentage',
    messageType  : 'std_msgs/Float32'
  });
 
 
 
 listenering.subscribe(function(message) {
-    console.log( 'Received message on ' + listenering.name + ': ' + message.data);
-    document.getElementById("batteryValue").innerHTML = message.data;
+    //console.log( 'Received message on ' + listenering.name + ': ' + message.data);
+    document.getElementById("batteryValue").innerHTML = (message.data.toFixed(2) + ' %');
  });
