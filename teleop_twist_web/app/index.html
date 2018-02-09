@@ -64,8 +64,10 @@
         <div id="content" class="snap-content">
 
             <div id="toolbar">
-                <h1>ROS web teleop</h1>
-                <span id="toggle-options" class="glyphicon glyphicon-th"></span>
+
+                <h1>ROS web teleop &nbsp; <small> Battery Value: </small> <script src="scripts/battery-voltage.js"></script> 
+                    <small id="batteryValue"> Unknown</small>  </h1>
+            <span id="toggle-options" class="glyphicon glyphicon-th"></span>
             </div>
 
             <div id="main">
@@ -109,6 +111,7 @@
 
         <script src="scripts/button-handler.js"></script>
         <script src="scripts/battery-manager.js"></script>
+        <script src="scripts/battery-voltage.js"></script>
         <!-- endbuild -->
 
         <script>
