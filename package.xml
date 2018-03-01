@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
   <name>teleop_twist_web</name>
-  <version>0.0.0</version>
+  <version>0.6.0</version>
   <description>Generic web-based teleop for twist robots.</description>
 
   <maintainer email="tim.clephas@nobleo.nl">Tim Clephas</maintainer>
