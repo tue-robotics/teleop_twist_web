@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<package>
+<package format="2">
   <name>teleop_twist_web</name>
   <version>0.6.0</version>
   <description>Generic web-based teleop for twist robots.</description>
@@ -13,6 +13,6 @@
   <license>BSD</license>
 
   <buildtool_depend>catkin</buildtool_depend>
-  <run_depend>rosbridge_server</run_depend>
+  <exec_depend>rosbridge_server</exec_depend>
 
 </package>
